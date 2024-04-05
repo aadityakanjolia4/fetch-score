@@ -9,7 +9,7 @@ import pytz
 
 # Replace the CORS URL with your's
 app = Flask(__name__)
-app.config['JSON_SORT_KEYS'] = False
+app.json.sort_keys = False
 cors = CORS(app, resources={
             r"/score/*": {"origins": [r'^https://.+sanweb.info$', r'^https://.+mskian.com$']}})
 
@@ -529,7 +529,7 @@ def invalid_route(e):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run()
     # app.run(
     #    host="0.0.0.0",
     #    port=int("5000")
